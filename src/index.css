@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border-style: solid;
+}
+
+button,
+input {
+  padding: 5px;
+  border-radius: 5px;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  color: #1a73e8;
+}
+
+.flex_row {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 65%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.text_input {
+  width: 100%;
+  margin: 5px 0;
+  min-height: 35px;
+  border: #999 solid 2px;
+  transition: all 0.3s;
+}
+
+.text_input:focus {
+  border-color: #1a73e8;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 50px;
+  border-bottom: #999 solid 2px;
+}
+
+.page_title {
+  text-align: center;
+}
+
+.form_title {
+  margin: 10px 0;
+}
+
+.contact_form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  border: #999 solid 1px;
+}
+
+.contact_form label {
+  font-weight: bold;
+}
+
+.contact_form button {
+  border: none;
+  background-color: #1a73e8;
+  color: #fff;
+  width: 10%;
+  min-width: 100px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.contact_list {
+  margin-top: 15px;
+}
+
+.contact_list .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.empty_list {
+  text-align: center;
+  color: #999;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: #999 solid 1px;
+  border-radius: 5px;
+}
+
+.contact_info {
+  display: flex;
+  align-items: center;
+}
+
+.contact_info div {
+  margin-left: 8px;
+}
+
+.contact button {
+  background: none;
+  border-width: 1px;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.contact .delete_btn {
+  color: rgb(202, 29, 29);
+  border-color: rgb(202, 29, 29);
+}
+
+.contact .edit_btn {
+  color: rgb(204, 170, 19);
+  border-color: rgb(204, 170, 19);
+}
+
+.search {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+}
