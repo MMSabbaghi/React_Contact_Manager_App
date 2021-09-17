@@ -6,12 +6,8 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 const ContactForm = ({ location, history }) => {
   const selectedContact = location.state;
   const initialContact = { email: "", name: "" };
-  const [contact, setContact] = useState(initialContact);
+  const [contact, setContact] = useState(selectedContact || initialContact);
   const [errors, setErrors] = useState(null);
-
-  useEffect(() => {
-    if (selectedContact) setContact(selectedContact);
-  }, [selectedContact]);
 
   const validate = (values) => {
     const name = String(values.name);
@@ -25,7 +21,7 @@ const ContactForm = ({ location, history }) => {
     if (email.length === 0) errors.email = "Email is required";
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if ( email.length > 0 && !emailRegex.test(email.toLowerCase()))
+    if (email.length > 0 && !emailRegex.test(email.toLowerCase()))
       errors.email = "This email is invalid";
 
     return errors;
@@ -44,11 +40,15 @@ const ContactForm = ({ location, history }) => {
     }
   };
 
+  useEffect(() => {
+    //Updates the error message if it already exists
+    if (errors) setErrors(validate(contact));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [contact]);
+
   const changeInputHandler = (e) => {
     const { name, value } = e.target;
     setContact({ ...contact, [name]: value });
-    //Updates the error message if it already exists
-    if (errors?.name || errors?.email) setErrors(validate(contact));
   };
 
   return (
