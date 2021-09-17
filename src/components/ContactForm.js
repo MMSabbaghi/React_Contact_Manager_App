@@ -25,7 +25,7 @@ const ContactForm = ({ location, history }) => {
     if (email.length === 0) errors.email = "Email is required";
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!emailRegex.test(email.toLowerCase()))
+    if ( email.length > 0 && !emailRegex.test(email.toLowerCase()))
       errors.email = "This email is invalid";
 
     return errors;
@@ -46,9 +46,9 @@ const ContactForm = ({ location, history }) => {
 
   const changeInputHandler = (e) => {
     const { name, value } = e.target;
+    setContact({ ...contact, [name]: value });
     //Updates the error message if it already exists
     if (errors?.name || errors?.email) setErrors(validate(contact));
-    setContact({ ...contact, [name]: value });
   };
 
   return (
