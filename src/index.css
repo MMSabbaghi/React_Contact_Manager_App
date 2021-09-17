@@ -97,6 +97,11 @@ a {
   margin-top: 10px;
 }
 
+.error_msg {
+  margin-bottom: 5px;
+  color: #e22030;
+}
+
 .contact_list {
   margin-top: 15px;
 }
