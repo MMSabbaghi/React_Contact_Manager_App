@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
+import { BiMoon, BiSun } from "react-icons/bi";
 
-const Navbar = () => {
+const Navbar = ({ onToggleMode, isDark }) => {
   return (
     <nav className="navbar">
       <div className="container">
-        <h1 className="page_title">
-          <Link to="/">Contact Manager</Link>
-        </h1>
+        <div className="nav_items">
+          <Link to="/" className="page_title">
+            Contact Manager
+          </Link>
+          <button className="toggle_mode_btn" onClick={onToggleMode}>
+            {isDark ? <BiSun /> : <BiMoon />}
+          </button>
+        </div>
       </div>
     </nav>
   );
