@@ -1,6 +1,4 @@
-import Navbar from "./components/Navbar";
-import ContactForm from "./components/ContactForm";
-import ContactList from "./components/ContactList";
+import { Navbar, ContactList, ContactForm } from "./components";
 import { Route, Switch } from "react-router";
 import { useState } from "react";
 

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Contact from "./Contact";
-import Seaerch from "./Seaerch";
+import { Seaerch, Contact } from ".";
 import { getAllContacts, deleteContact } from "../services/contacts.services";
 
 const ContactList = ({ history }) => {

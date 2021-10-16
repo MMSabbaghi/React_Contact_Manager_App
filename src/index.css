@@ -6,7 +6,6 @@
   --secondary-color: #fff;
   --primary-color: #1a73e8;
   --red-color: #e1474d;
-  --btn-color: #fff;
 }
 
 [data-theme="dark"] {
@@ -15,7 +14,6 @@
   --secondary-color: #1f1f51;
   --primary-color: #ffd01f;
   --red-color: #ff4d6c;
-  --btn-color: #090c3f;
 }
 
 * {
@@ -146,7 +144,7 @@ a {
 .contact_form button {
   border: none;
   background-color: var(--primary-color);
-  color: var(--btn-color);
+  color: var(--secondary-color);
   width: 10%;
   min-width: 100px;
   height: 30px;
